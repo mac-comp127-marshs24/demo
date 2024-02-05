@@ -2,8 +2,8 @@ package classes;
 
 public class Student {
 
-    private String major;
     private String name;
+    private String major;
 
     public Student(String name) {
         this.name = name;
@@ -27,7 +27,6 @@ public class Student {
     }
 
     public String toString() {
-        return "The student named " + this.name + " has a major of " + this.major;
+        return "This is a student named " + this.name + " with a major of " + this.major;
     }
-    
 }
