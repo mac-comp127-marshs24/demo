@@ -14,11 +14,11 @@ public class ColorBG {
         Random rand = new Random();
 
         // canvas.onClick(
-        //     (MouseButtonEvent e) ->
+        //     (MouseButtonEvent event) ->
         //     {canvas.setBackground(
         //         new Color(rand.nextInt(256),
-        //             rand.nextInt(256),
-        //             rand.nextInt(256))
+        //                     rand.nextInt(256),
+        //                     rand.nextInt(256))
         //     );}
         // );
 
@@ -26,9 +26,12 @@ public class ColorBG {
             (MouseMotionEvent event) ->
             {
                 Line l = new Line(event.getPosition(), event.getPreviousPosition());
-                l.setStrokeColor(new Color(rand.nextInt(256),
-                             rand.nextInt(256),
-                             rand.nextInt(256)));
+                l.setStrokeColor(
+                    new Color(rand.nextInt(256),
+                                rand.nextInt(256),
+                                rand.nextInt(256)) 
+                );
+                l.setStrokeWidth(3);
                 canvas.add(l);
             }
         );
