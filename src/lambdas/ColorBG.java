@@ -5,6 +5,7 @@ import java.util.Random;
 
 import edu.macalester.graphics.*;
 import edu.macalester.graphics.events.*;
+import edu.macalester.graphics.ui.Button;
 
 public class ColorBG {
     public static void main(String[] args) {
@@ -22,6 +23,18 @@ public class ColorBG {
         //     );}
         // );
 
+        Button clearCanvas = new Button("Clear");
+        clearCanvas.setPosition(10, 10);
+        canvas.add(clearCanvas);
+
+        clearCanvas.onClick(
+            () ->
+            {
+                canvas.removeAll();
+                canvas.add(clearCanvas);
+            }
+        );
+
         canvas.onDrag(
             (MouseMotionEvent event) ->
             {
@@ -35,7 +48,6 @@ public class ColorBG {
                 canvas.add(l);
             }
         );
- 
     }
     
 }
